@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>
+    <label>
+        <textarea id="textarea"></textarea>
+    </label>
+    </p>
+    <p>
+    <label>
+        <input type="reset" value="Очистить">
+    </label>
+    </p>
+</form>
+<script>
+    let text = document.querySelector('#textarea');
+    text.value = localStorage.getItem('text');
+    //localStorage.setItem('143textarea', text.value);
+    text.oninput = () => {
+        localStorage.setItem('text', text.value)
+    };
+</script>
+</body>
+</html>
